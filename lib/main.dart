@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './questao.dart';
+import './resposta.dart';
 
 main() => runApp(PerguntaApp());
 
@@ -8,20 +9,73 @@ class _PerguntasAppState extends State<PerguntaApp> {
 
 
   var _perguntaSelecionada = 0;
+  final _perguntas = const [
+    {
+      'texto': 'Qual são suas cores?',
+      'respostas': [ 'Tricolor', 'Alvinegro', 'Alviverde', 'Canarinho', 'Sem preferência' ],
+    },
+    {
+      'texto': "prefere cachorro ou gato?",
+      'respostas': [ 'Cachorro', 'Gato', 'Os Dois', 'Nenhum', 'Sem preferência' ],
+    },
+    {
+      'texto': "Qual o seu estilo?",
+      'respostas': [ 'Rock', 'MPB', 'Pagode', 'Sertanejo', 'Funk', 'Trance' ],
+    },
+    {
+      'texto': "Qual a sua estação?",
+      'respostas': [ 'Primavera', 'Verão', 'Outono', 'Inverno' ],
+    },
+    {
+      'texto': "Qual é o seu veneno ?",
+      'respostas': [ 'Cerveja', 'Vinho', 'Whisky', 'Coca-cola', 'Red bull' ],
+    },
+    {
+      'texto': "O que te prende na poltrona?",
+      'respostas': [ 'Ficção', 'Fantasia', 'Comédia', 'Drama', 'Romance', 'Novela' ],
+    },
+    {
+      'texto': "Qual ?",
+      'respostas': [ 'Rock', 'MPB', 'Pagode', 'Sertanejo' ],
+    },
+    {
+      'texto': "Qual ?",
+      'respostas': [ 'Rock', 'MPB', 'Pagode', 'Sertanejo' ],
+    },
+    {
+      'texto': "Qual ?",
+      'respostas': [ 'Rock', 'MPB', 'Pagode', 'Sertanejo' ],
+    },
+    {
+      'texto': "Qual o seu passeio ?",
+      'respostas': [ 'Praia', 'Interior', 'Cachoeira', 'Clube', 'Minha Casa' ],
+    },
+  ];
 
   void _responder() {
-    setState(() {
-    _perguntaSelecionada++;
-    });
-    print(_perguntaSelecionada);
+    if(gotQuestion) {
+      setState(() {
+      _perguntaSelecionada++;
+      });
+    }
+  }
+
+  bool get gotQuestion {
+    return _perguntaSelecionada < _perguntas.length;
   }
 
   @override
   Widget build(BuildContext context) {
-    final perguntas = [
-      'Qual são suas cores?',
-      "prefere cachorro ou gato?",
-    ];
+
+    List<String> respostas = gotQuestion 
+    ? _perguntas[_perguntaSelecionada]['respostas']
+    : null;
+    // List<Widget> lista = respostas.map((r) => Resposta(r, _responder )).toList();
+
+    // for( String r in respostas){
+    //   lista.add(Resposta(r, _responder ));
+    // }
+
 
 
     return MaterialApp(
@@ -29,23 +83,12 @@ class _PerguntasAppState extends State<PerguntaApp> {
         appBar: AppBar(
           title: Text('Perguntas') ,
         ),
-        body: Column(
+        body: gotQuestion? Column(
           children: <Widget>[
-            Questao(perguntas[_perguntaSelecionada]),
-            RaisedButton(
-              child: Text('Tricolor'),
-              onPressed: _responder,
-            ),
-            RaisedButton(
-              child: Text('Alviverde'),
-              onPressed: _responder,
-            ),
-            RaisedButton(
-              child: Text('Alvinegro'),
-              onPressed: _responder,
-            )
+            Questao(_perguntas[_perguntaSelecionada]['texto']),
+            ...respostas.map((r) => Resposta(r, _responder )).toList()
           ],
-        ),
+        ) : null,
       ),
     );
   }
