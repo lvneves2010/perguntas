@@ -1,4 +1,4 @@
-final _perguntas = const [
+final perguntasRespostas = const [
     {
       'texto': 'Qual são suas cores?',
       'respostas': [
@@ -12,9 +12,9 @@ final _perguntas = const [
     {
       'texto': "prefere cachorro ou gato?",
       'respostas': [
-        {'nome': 'Cachorro', 'valor': 5},
+        {'nome': 'Cachorro', 'valor': 7},
         {'nome': 'Gato', 'valor': 1},
-        {'nome': 'Os Dois', 'valor': 2},
+        {'nome': 'Os Dois', 'valor': 5},
         {'nome': 'Nenhum', 'valor': 3},
         {'nome': 'Sem preferência', 'valor': 4},
       ],
@@ -27,7 +27,7 @@ final _perguntas = const [
         {'nome': 'Pagode', 'valor': 1},
         {'nome': 'Sertanejo', 'valor': 3},
         {'nome': 'Funk', 'valor': -1},
-        {'nome': 'Trance', 'valor': 5},
+        {'nome': 'Trance', 'valor': 4},
       ],
     },
     {
@@ -61,46 +61,40 @@ final _perguntas = const [
       ],
     },
     {
-      'texto': "Qual ?",
+      'texto': "Qual é o seu filósofo ?",
       'respostas': [
-        {'nome': 'Rock', 'valor': 7},
-        {'nome': 'MPB', 'valor': 5},
-        {'nome': 'Pagode', 'valor': 1},
-        {'nome': 'Sertanejo', 'valor': 3},
-        {'nome': 'Funk', 'valor': -1},
-        {'nome': 'Trance', 'valor': 5},
+        {'nome': 'Olavo de Carvalho', 'valor': -1},
+        {'nome': 'Mario Sergio Cortella', 'valor': 7},
+        {'nome': 'Luiz Felipe Pondé', 'valor': 5},
+        {'nome': 'não curto', 'valor': 3}
       ],
     },
     {
-      'texto': "Qual ?",
+      'texto': "Qual  a forma do planeta?",
       'respostas': [
-        {'nome': 'Rock', 'valor': 7},
-        {'nome': 'MPB', 'valor': 5},
-        {'nome': 'Pagode', 'valor': 1},
-        {'nome': 'Sertanejo', 'valor': 3},
-        {'nome': 'Funk', 'valor': -1},
-        {'nome': 'Trance', 'valor': 5},
+        {'nome': 'Redonda', 'valor': 7},
+        {'nome': 'Plana', 'valor': 0}
       ],
     },
     {
-      'texto': "Qual ?",
+      'texto': "Qual o teu passatempo favorito?",
       'respostas': [
-        {'nome': 'Rock', 'valor': 7},
-        {'nome': 'MPB', 'valor': 5},
-        {'nome': 'Pagode', 'valor': 1},
-        {'nome': 'Sertanejo', 'valor': 3},
-        {'nome': 'Funk', 'valor': -1},
-        {'nome': 'Trance', 'valor': 5},
+        {'nome': 'Ler ', 'valor': 6},
+        {'nome': 'Assistir TV', 'valor': 4},
+        {'nome': 'Fazer exercício', 'valor': 5},
+        {'nome': 'Tocar um instrumento', 'valor': 7},
+        {'nome': 'Beber', 'valor': -1},
+        {'nome': 'jogar video game', 'valor': 3},
       ],
     },
     {
-      'texto': "Qual  ?",
+      'texto': "O que te relaxa mais?",
       'respostas': [
         {'nome': 'Praia', 'valor': 7},
         {'nome': 'Interior', 'valor': 5},
-        {'nome': 'Cachoeira', 'valor': 1},
+        {'nome': 'Cachoeira', 'valor': 4},
         {'nome': 'Clube', 'valor': 3},
-        {'nome': 'Minha Casa', 'valor': -1}
+        {'nome': 'Minha Casa', 'valor': 2}
       ],
     },
   ];
