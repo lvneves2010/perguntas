@@ -21,6 +21,13 @@ class _PerguntasAppState extends State<PerguntaApp> {
     print(_valorTotal);
   }
 
+  void _restart() {
+    setState(() {
+      _perguntaSelecionada = 0;
+      _valorTotal = 0;
+    });
+  }
+
   bool get gotQuestion {
     return _perguntaSelecionada < perguntasRespostas.length;
   }
@@ -28,6 +35,7 @@ class _PerguntasAppState extends State<PerguntaApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Perguntas') ,
@@ -38,7 +46,7 @@ class _PerguntasAppState extends State<PerguntaApp> {
           perguntaSelecionada: _perguntaSelecionada,
           quandoResponder: _responder,
           )
-        : Resultado(_valorTotal)
+        : Resultado(_valorTotal, _restart)
       ),
     );
   }
